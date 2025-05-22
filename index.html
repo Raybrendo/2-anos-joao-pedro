@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Desejos de Aniversário</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.imgur.com/1Owa5MX.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .wishlist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        .item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ff6347;
+        }
+        .item h3 {
+            background-color: #ff6347;
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+        .item p {
+            padding: 10px;
+            color: #333;
+        }
+        .item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .wishlist {
+                flex-direction: column;
+                align-items: center;
+            }
+            .item {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+            .item h3 {
+                font-size: 1rem;
+            }
+            .item p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Desejos de Aniversário</h1>
+    <div class="wishlist">
+        <div class="item">
+            <a href="https://www.amazon.com.br/Wheels-Garagem-Conjunto-Brinquedo-Mattel/dp/B07Y98T1MS" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81zCFedpDFL._AC_SL1500_.jpg" alt="Hot Wheels City Garagem">
+                <h3>Hot Wheels City Garagem</h3>
+            </a>
+            <p>Pista de brinquedo com carregadores elétricos.</p>
+        </div>
+        <div class="item">
+            <a href="https://www.amazon.com.br/Hot-Wheels-Nemesis-Gorila-Mattel/dp/B09CGCBVJZ" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81iQ34RJGfL._AC_SL1500_.jpg" alt="Hot Wheels City">
+                <h3>Hot Wheels City</h3>
+            </a>
+            <p>Pista de brinquedo com carregadores elétricos.</p>
+        </div>
+        <div class="item">
+            <a href="https://www.amazon.com.br/Hot-Wheels-Pistas-City-Mattel/dp/B09CG55PY1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81D3WDK3DoL._AC_SL1500_.jpg" alt="Hot Wheels Pistas City">
+                <h3>Hot Wheels Pistas City</h3>
+            </a>
+            <p>Conjunto de pistas com 10 peças e veículo em escala 1:64.</p>
+        </div>
+    </div>
+</body>
+</html>
