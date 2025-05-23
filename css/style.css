@@ -1,0 +1,12 @@
+body {
+  background-image: url('https://i.imgur.com/1Owa5MX.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Altera para rolagem normal em telas pequenas */
+  }
+}
