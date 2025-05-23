@@ -10,3 +10,46 @@ body {
     background-attachment: scroll; /* Altera para rolagem normal em telas pequenas */
   }
 }
+/* Seta holográfica de arraste para cima */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px; /* Distância da parte inferior da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  cursor: pointer;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.arrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 4px solid #00f2ff;
+  border-bottom: 4px solid #00f2ff;
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.8), 0 0 20px rgba(0, 242, 255, 0.6);
+}
+
+/* Animação de pulsação */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
