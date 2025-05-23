@@ -1,162 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Desejos de Aniversário</title>
-    <style>
-        /* Estilos Gerais */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://i.imgur.com/1Owa5MX.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 400vh; /* Altura total para 4 janelas */
-            overflow-y: auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Desejos de Aniversário</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            color: #af4836;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 3rem;
-        }
+    /* Estilos gerais */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://i.imgur.com/1Owa5MX.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .thank-you {
-            font-family: 'Georgia', serif; /* Fonte personalizada */
-            background-color: rgba(255, 255, 255, 0.6); /* Fundo com 50% de opacidade */
-            padding: 30px;
-            text-align: center;
-            border-bottom: 2px solid #ff6347;
-        }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff6347;
+    }
 
+    .thank-you {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 630px;
+    }
 
-        .empty-window {
-            font-family: 'Georgia',serif;
-            font-size: 25px;
-            background-color: rgba(255, 255, 255, 0.0); /* Fundo com 50% de opacidade */
-            padding-left: 25px;
-            padding-right: 210px;
-            padding-top: 40px;
-            padding-bottom: 150px;
-            text-align: left;
-            text-decoration: aliceblue;
-            
-            
-        }
+    .wishlist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
 
-        .wishlist {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-            flex-grow: 0;
-            overflow-y: auto;
-        }
+    .item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-        .item {
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s;
-            flex: 1;
-        }
+    .item:hover {
+      transform: scale(1.05);
+    }
 
-        .item:hover {
-            transform: scale(1.05);
-        }
+    .item img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #ff6347;
+    }
 
-        .item img {
-            width: 100%;
-            height: auto;
-            border-bottom: 2px solid #ff6347;
-        }
+    .item h3 {
+      background-color: #ff6347;
+      color: white;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
 
-        .item h3 {
-            background-color: #ff6347;
-            color: white;
-            margin: 0;
-            padding: 10px;
-        }
+    .item p {
+      padding: 15px;
+      font-size: 1rem;
+      color: #333;
+    }
 
-        .item p {
-           
-            padding: 18px;
-            color: #333;
-            font-size: 0.9rem;
-        }
+    .item a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .item a {
-            text-decoration: none;
-            color: inherit;
-        }
+    /* Media Queries */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
 
-        /* Media Queries para Responsividade */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
+      .thank-you {
+        padding: 15px;
+      }
 
-            .item {
-                width: 98%;
-                margin-bottom: 60px;
-              
-            }
-        }
+      .item h3 {
+        font-size: 1rem;
+      }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2rem;
-            }
-
-            .item h3 {
-                font-size: 1rem;
-            }
-
-            .item p {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+      .item p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="thank-you">
-        <h1>Obrigado por visitar minha lista de desejos!</h1>
-        <p></p>
+  <div class="thank-you">
+    <h1>Obrigado por visitar minha lista de desejos!</h1>
+    <p></p>
+  </div>
+
+  <div class="wishlist">
+    <div class="item">
+      <a href="https://www.amazon.com.br/Wheels-Garagem-Conjunto-Brinquedo-Mattel/dp/B07Y98T1MS" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/81zCFedpDFL._AC_SL1500_.jpg" alt="Hot Wheels City Garagem">
+        <h3>Hot Wheels City Garagem</h3>
+      </a>
+      <p>Esse modelo basta uma, então! Só o titio ou titia mais legal irá me dar, né? Então clica logo nele!!!</p>
     </div>
-    <div class="empty-window">
-        <p>Fico muito grato pela sua atenção e carinho. Cada item aqui representa um sonho que, com sua ajuda, pode se tornar realidade. Agradeço de coração!</p>
+
+    <div class="item">
+      <a href="https://www.amazon.com.br/Hot-Wheels-Nemesis-Gorila-Mattel/dp/B09CGCBVJZ" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/81iQ34RJGfL._AC_SL1500_.jpg" alt="Hot Wheels City">
+        <h3>Hot Wheels City</h3>
+      </a>
+      <p>Esse modelo também basta um, ele não é tão caro quanto o outro, mas vou me divertir da mesma forma! Inclusive, posso deixar você brincar comigo.</p>
     </div>
-    <div class="wishlist">
-        <div class="item">
-            <a href="https://www.amazon.com.br/Wheels-Garagem-Conjunto-Brinquedo-Mattel/dp/B07Y98T1MS" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81zCFedpDFL._AC_SL1500_.jpg" alt="Hot Wheels City Garagem">
-                <h3>Hot Wheels City Garagem</h3>
-            </a>
-            <p>Desse modelo basta uma, então! só o titio ou titia mais legal irá me dar, ne ?! então clica logo nele!!!</p>
-        </div>
-        <div class="item">
-            <a href="https://www.amazon.com.br/Hot-Wheels-Nemesis-Gorila-Mattel/dp/B09CGCBVJZ" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81iQ34RJGfL._AC_SL1500_.jpg" alt="Hot Wheels City">
-                <h3>Hot Wheels City</h3>
-            </a>
-            <p>Desse modelo também basta um, ele não é tão caro quanto o outro, mas vou me divetir da mesma forma! inclusive, posso deixar você brincar comigo.</p>
-        </div>
-        <div class="item">
-            <a href="https://www.amazon.com.br/Hot-Wheels-Pistas-City-Mattel/dp/B09CG55PY1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81D3WDK3DoL._AC_SL1500_.jpg" alt="Hot Wheels Pistas City">
-                <h3>Hot Wheels Pistas City</h3>
-            </a>
-            <p>Essa tem varias formas de montar, então, tudo bem se eu ganhar VARIAS, e também não é tão cara.</p>
-        </div>
+
+    <div class="item">
+      <a href="https://www.amazon.com.br/Hot-Wheels-Pistas-City-Mattel/dp/B09CG55PY1" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/81D3WDK3DoL._AC_SL1500_.jpg" alt="Hot Wheels Pistas City">
+        <h3>Hot Wheels Pistas City</h3>
+      </a>
+      <p>Essa tem várias formas de montar, então, tudo bem se eu ganhar várias, e também não é tão cara.</p>
     </div>
+  </div>
 </body>
 </html>
